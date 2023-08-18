@@ -4,13 +4,13 @@ namespace Clasesiniciales
 {
     public class Mochila
     {
-        int NumeroDeBolsas;
-        string Tamanio;
-        float Precio;
-        string Disenio;
-        string Material;
-        int NumeroDeLlaveros;
-        Color color;
+        public int NumeroDeBolsas;
+        public string Tamanio;
+        public float Precio;
+        public string Disenio;
+        public string Material;
+        public int NumeroDeLlaveros;
+        public Color color;
 
     }
 }

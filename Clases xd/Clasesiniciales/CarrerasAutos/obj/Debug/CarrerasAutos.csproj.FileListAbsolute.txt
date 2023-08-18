@@ -1,0 +1,7 @@
+C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\CarrerasAutos\bin\Debug\CarrerasAutos.exe.config
+C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\CarrerasAutos\bin\Debug\CarrerasAutos.exe
+C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\CarrerasAutos\bin\Debug\CarrerasAutos.pdb
+C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\CarrerasAutos\obj\Debug\CarrerasAutos.csproj.AssemblyReference.cache
+C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\CarrerasAutos\obj\Debug\CarrerasAutos.csproj.CoreCompileInputs.cache
+C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\CarrerasAutos\obj\Debug\CarrerasAutos.exe
+C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\CarrerasAutos\obj\Debug\CarrerasAutos.pdb
