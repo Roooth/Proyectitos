@@ -5,3 +5,10 @@ C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\Carre
 C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\CarrerasAutos\obj\Debug\CarrerasAutos.csproj.CoreCompileInputs.cache
 C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\CarrerasAutos\obj\Debug\CarrerasAutos.exe
 C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\CarrerasAutos\obj\Debug\CarrerasAutos.pdb
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\CarrerasAutos\bin\Debug\CarrerasAutos.exe.config
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\CarrerasAutos\bin\Debug\CarrerasAutos.exe
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\CarrerasAutos\bin\Debug\CarrerasAutos.pdb
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\CarrerasAutos\obj\Debug\CarrerasAutos.csproj.AssemblyReference.cache
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\CarrerasAutos\obj\Debug\CarrerasAutos.csproj.CoreCompileInputs.cache
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\CarrerasAutos\obj\Debug\CarrerasAutos.exe
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\CarrerasAutos\obj\Debug\CarrerasAutos.pdb

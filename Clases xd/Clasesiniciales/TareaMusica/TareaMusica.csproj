@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{458D0274-46E7-4307-8AA3-E0D6ECAC7904}</ProjectGuid>
+    <ProjectGuid>{E57BC3EF-5FEB-4EF2-98BF-4F7FBFD84414}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CarrerasAutos</RootNamespace>
-    <AssemblyName>CarrerasAutos</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>TareaMusica</RootNamespace>
+    <AssemblyName>TareaMusica</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -44,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoCarreras.cs" />
-    <Compile Include="PistaDeCarreras.cs" />
+    <Compile Include="Album.cs" />
+    <Compile Include="Artista.cs" />
+    <Compile Include="Cancion.cs" />
+    <Compile Include="Musica.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
