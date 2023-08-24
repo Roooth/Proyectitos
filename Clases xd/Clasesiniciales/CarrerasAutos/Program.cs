@@ -24,6 +24,7 @@ namespace CarrerasAutos
             Miata.modelo = "Mazda MX-5";
             Miata.peso = 0.9f;
             Miata.velocidad = 320;//son km
+            
 
             PistaDeCarreras hnoRodriguez = new PistaDeCarreras();
             hnoRodriguez.nombre = "Autodromo Hermanos Rodriguez";
@@ -31,6 +32,15 @@ namespace CarrerasAutos
 
             //mando a competir estos coches
             hnoRodriguez.Competir(Ferrari, Miata);
+
+            //Le pongo 20 L de gasolina al ferrari
+            Ferrari.PonerGas(20);
+            Ferrari.Arrancar();
+            Miata.Arrancar();
+            //Hago que Miata Frene
+            Miata.Frenar();
+            //Hago que Ferrari acelere
+            Ferrari.Acelerar(1);
 
             //espera a enter para continuar
             Console.ReadLine();
