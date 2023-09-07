@@ -1,0 +1,91 @@
+De tarea traer el ejercicio que se dejo el viernes (esta en moodle)
+
+--------------------------------------------------------------------
+
+int edad = 20;
+      \
+	identificador
+
+
+--------------------------------------------------------------------
+*Evitar usar palabras reservadas como identificadores, tampoco intentes agregar una arroba o simbolos que la acompañe, evitalas a toda costa
+(las palabras reservadas son esas como int, class, float...)
+
+*Usa nombres significativos
+------------------------------------
+
+clase Reloj{
+
+ void consultarHora () //hacer esto
+{}
+
+void ch() //No hacer esto
+{}
+
+}
+------------------------------------
+
+
+Usaremos estos estilos de escritura para nuestro codigo
+*camelCase (siempre inicia con minuscula) para variables y metodos
+*PascalCase (siempre inicia con mayuscula) para clases y tipos
+
+
+-----------------------
+Mochila
+color
+-----------------------
+
+
+*Las llaves deben tener su identacion y estar en su propia linea (definen los bloques son importantes para saber separar estos) justo abajo 
+de su bloque en la misma identaacion que la primera letra del bloque
+
+
+---------------------------------------------------------------------
+	void consultarHora()
+	{
+
+
+
+	}
+-----------------------------------------------------------------------
+
+
+///ARREGLOS///
+Estructuras de datos
+Coleccion de datos
+Es lineal (Los elementos estan en el mismo nivel)
+Es estatico (no se le puede cambiar el tamaño o agregar cosas, hay que establecer todo ahi desde la primera vez)
+//Lo que este dentro de los corchetes es el arreglo
+
+
+------------------------
+
+int edad= 30;
+int[] edades={20, 30 ,37, 40}; //Esto es una declaracion implisita y empiezan a contarse los elementos o datos desde 0 en adelante
+			       // Es decir el elemento 20 es el 0, el 30 es 1, el 37 es 2 y el 40 es 3
+
+	float[] pesos = new float {10};
+				    \
+				     tamaño del arreglo, en este caso cuantos pesos hay
+string[] nombres; Sin inicializar
+-------------
+
+Auto[]autos= new Auto{3};//Tambien funciona con clases :o
+
+-------------
+------------------------
+Abrimos un doc nuevo de visual studio para probar esto o usamos uno que ya tengamos hecho :> (yo sigo usando el de clases iniciales jsjsj pero agrego un proyecto ahi mismo)
+
+-----------------------------
+
+for(int i = 0; i< 10; i ++)
+	\	\        \
+	 \	 \        modificacion de variable de control
+	  \	  condicion      
+	   variable de control 
+
+
+-----------------------------
+
+La practica es hacer un generador de nombres :D

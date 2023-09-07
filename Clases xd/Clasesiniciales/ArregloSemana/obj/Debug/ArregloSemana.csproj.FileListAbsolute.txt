@@ -1,0 +1,7 @@
+C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\ArregloSemana\bin\Debug\ArregloSemana.exe.config
+C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\ArregloSemana\bin\Debug\ArregloSemana.exe
+C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\ArregloSemana\bin\Debug\ArregloSemana.pdb
+C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\ArregloSemana\obj\Debug\ArregloSemana.csproj.AssemblyReference.cache
+C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\ArregloSemana\obj\Debug\ArregloSemana.csproj.CoreCompileInputs.cache
+C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\ArregloSemana\obj\Debug\ArregloSemana.exe
+C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\ArregloSemana\obj\Debug\ArregloSemana.pdb

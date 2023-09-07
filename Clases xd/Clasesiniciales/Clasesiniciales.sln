@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarrerasAutos", "CarrerasAu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TareaMusica", "TareaMusica\TareaMusica.csproj", "{E57BC3EF-5FEB-4EF2-98BF-4F7FBFD84414}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArregloSemana", "ArregloSemana\ArregloSemana.csproj", "{95660041-622E-4F2D-950A-E88BD920CA7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneradorNombres", "GeneradorNombres\GeneradorNombres.csproj", "{34D4B01E-FCF4-49B3-8BD4-1DCB8A250818}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{E57BC3EF-5FEB-4EF2-98BF-4F7FBFD84414}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E57BC3EF-5FEB-4EF2-98BF-4F7FBFD84414}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E57BC3EF-5FEB-4EF2-98BF-4F7FBFD84414}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95660041-622E-4F2D-950A-E88BD920CA7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95660041-622E-4F2D-950A-E88BD920CA7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95660041-622E-4F2D-950A-E88BD920CA7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95660041-622E-4F2D-950A-E88BD920CA7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34D4B01E-FCF4-49B3-8BD4-1DCB8A250818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34D4B01E-FCF4-49B3-8BD4-1DCB8A250818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34D4B01E-FCF4-49B3-8BD4-1DCB8A250818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34D4B01E-FCF4-49B3-8BD4-1DCB8A250818}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
