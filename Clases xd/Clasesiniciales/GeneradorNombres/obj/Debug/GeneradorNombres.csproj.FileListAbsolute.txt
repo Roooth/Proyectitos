@@ -1,0 +1,7 @@
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\GeneradorNombres\bin\Debug\GeneradorNombres.exe.config
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\GeneradorNombres\bin\Debug\GeneradorNombres.exe
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\GeneradorNombres\bin\Debug\GeneradorNombres.pdb
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\GeneradorNombres\obj\Debug\GeneradorNombres.csproj.AssemblyReference.cache
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\GeneradorNombres\obj\Debug\GeneradorNombres.csproj.CoreCompileInputs.cache
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\GeneradorNombres\obj\Debug\GeneradorNombres.exe
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\GeneradorNombres\obj\Debug\GeneradorNombres.pdb
