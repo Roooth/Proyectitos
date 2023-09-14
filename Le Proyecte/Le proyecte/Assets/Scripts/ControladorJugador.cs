@@ -6,6 +6,7 @@ public class ControladorJugador : MonoBehaviour
 {
     private Rigidbody2D miCuerpo;
     public float velocidadCaminar = 3;
+    public float fuerzaSalto = 0; //Esta variable es la que parametriza y sale en el inspector de unity xd
     private Animator miAnimador;
 
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class ControladorJugador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         float velActualVert = miCuerpo.velocity.y;
         //Leo si el usuario esta presionando un eje horizontal en las flechas
         float movHoriz = Input.GetAxis("Horizontal");
@@ -40,5 +42,15 @@ public class ControladorJugador : MonoBehaviour
             miCuerpo.velocity = new Vector3(0, velActualVert, 0);
             miAnimador.SetBool("Caminando", false);
         }
+
+
+        //Salto
+
+        if (Input.GetButtonDown("Jump")) 
+        {
+            miCuerpo.AddForce(new Vector3(0, fuerzaSalto, 0), ForceMode2D.Impulse);
+        }
+
+        miAnimador.SetFloat("Vel_Vert", velActualVert);
     }
 }
