@@ -8,6 +8,8 @@ public class ControladorJugador : MonoBehaviour
     public float velocidadCaminar = 3;
     public float fuerzaSalto = 0; //Esta variable es la que parametriza y sale en el inspector de unity xd
     private Animator miAnimador;
+    public bool enPiso = false; //grounded
+    public int saltoDoble = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,8 @@ public class ControladorJugador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ComprobarPiso();
+
         float velActualVert = miCuerpo.velocity.y;
         //Leo si el usuario esta presionando un eje horizontal en las flechas
         float movHoriz = Input.GetAxis("Horizontal");
@@ -45,12 +48,20 @@ public class ControladorJugador : MonoBehaviour
 
 
         //Salto
-
-        if (Input.GetButtonDown("Jump")) 
+        if (enPiso)
         {
-            miCuerpo.AddForce(new Vector3(0, fuerzaSalto, 0), ForceMode2D.Impulse);
-        }
+            if (Input.GetButtonDown("Jump"))
+            {
+                miCuerpo.AddForce(new Vector3(0, fuerzaSalto, 0), ForceMode2D.Impulse);
+            }
 
-        miAnimador.SetFloat("Vel_Vert", velActualVert);
+            miAnimador.SetFloat("Vel_Vert", velActualVert);
+        }
+    }
+
+    void ComprobarPiso()
+    {
+        //Lanzo un rayo de colision hacia abajo desde la posicion del este objeto
+       enPiso = Physics2D.Raycast(transform.position,Vector2.down,0.1f);
     }
 }
