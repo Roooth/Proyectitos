@@ -10,6 +10,7 @@ public class ControladorJugador : MonoBehaviour
     private Animator miAnimador;
     public bool enPiso = false; //grounded
     public int saltoDoble = 0;
+    public int maxSaltosPos = 2;//defino cuanto es el maximo de saltos posibles, 2 porque puede saltar desde el piso y uno en el aire
 
     // Start is called before the first frame update
     void Start()
@@ -50,12 +51,19 @@ public class ControladorJugador : MonoBehaviour
         //Salto
         if (enPiso)
         {
+            saltoDoble = 0; //se resetea el si podemos hacer salto doble para que no saltemos infinitamnete
             if (Input.GetButtonDown("Jump"))
             {
                 miCuerpo.AddForce(new Vector3(0, fuerzaSalto, 0), ForceMode2D.Impulse);
             }
 
             miAnimador.SetFloat("Vel_Vert", velActualVert);
+        }
+
+        else if (Input.GetButtonDown("Jump") && saltoDoble < maxSaltosPos -1)
+        {
+            miCuerpo.AddForce(new Vector2(0, fuerzaSalto), ForceMode2D.Impulse);
+            saltoDoble++;
         }
     }
 
