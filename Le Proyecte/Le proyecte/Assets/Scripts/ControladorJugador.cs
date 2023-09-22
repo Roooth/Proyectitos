@@ -9,7 +9,7 @@ public class ControladorJugador : MonoBehaviour
     public float fuerzaSalto = 0; //Esta variable es la que parametriza y sale en el inspector de unity xd
     private Animator miAnimador;
     public bool enPiso = false; //grounded
-    public int saltoDoble = 0;
+    public int saltoDoble = 0;//se puede saltar doble? o no
     public int maxSaltosPos = 2;//defino cuanto es el maximo de saltos posibles, 2 porque puede saltar desde el piso y uno en el aire
 
     // Start is called before the first frame update
@@ -24,6 +24,15 @@ public class ControladorJugador : MonoBehaviour
     void Update()
     {
         ComprobarPiso();
+        if (enPiso) 
+        {
+            miAnimador.SetBool("EnPiso", true);
+        }
+
+        if (!enPiso)
+        {
+            miAnimador.SetBool("EnPiso", false);
+        }
 
         float velActualVert = miCuerpo.velocity.y;
         //Leo si el usuario esta presionando un eje horizontal en las flechas
@@ -33,13 +42,16 @@ public class ControladorJugador : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, 0);
                                             //El 3 es hardcore, asi es parametrizado :D
             miCuerpo.velocity = new Vector3(velocidadCaminar, velActualVert, 0);
-            miAnimador.SetBool("Caminando", true);
-        }
+                miAnimador.SetBool("Caminando", true);             
+        
+            }
         else if (movHoriz < 0)//A la izquierda
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
             miCuerpo.velocity = new Vector3(-velocidadCaminar, velActualVert, 0);
-            miAnimador.SetBool("Caminando", true);
+ 
+                miAnimador.SetBool("Caminando", true);
+                
         }
         else//Quieto
         {
@@ -58,12 +70,13 @@ public class ControladorJugador : MonoBehaviour
             }
 
             miAnimador.SetFloat("Vel_Vert", velActualVert);
+            
         }
 
-        else if (Input.GetButtonDown("Jump") && saltoDoble < maxSaltosPos -1)
+        else if (Input.GetButtonDown("Jump") && saltoDoble < maxSaltosPos -1) //si se salta y ya se reseteo el salto doble..
         {
-            miCuerpo.AddForce(new Vector2(0, fuerzaSalto), ForceMode2D.Impulse);
-            saltoDoble++;
+            miCuerpo.AddForce(new Vector2(0, fuerzaSalto), ForceMode2D.Impulse);//salta xd
+            saltoDoble++;//decir que ya se hizo el salto doble xd
         }
     }
 
