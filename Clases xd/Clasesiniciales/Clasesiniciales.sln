@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArregloSemana", "ArregloSem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneradorNombres", "GeneradorNombres\GeneradorNombres.csproj", "{34D4B01E-FCF4-49B3-8BD4-1DCB8A250818}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticaConstructores", "PracticaConstructores\PracticaConstructores.csproj", "{ED96DD5A-3E09-4C54-AC29-F3A385A2156B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{34D4B01E-FCF4-49B3-8BD4-1DCB8A250818}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34D4B01E-FCF4-49B3-8BD4-1DCB8A250818}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34D4B01E-FCF4-49B3-8BD4-1DCB8A250818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED96DD5A-3E09-4C54-AC29-F3A385A2156B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED96DD5A-3E09-4C54-AC29-F3A385A2156B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED96DD5A-3E09-4C54-AC29-F3A385A2156B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED96DD5A-3E09-4C54-AC29-F3A385A2156B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
