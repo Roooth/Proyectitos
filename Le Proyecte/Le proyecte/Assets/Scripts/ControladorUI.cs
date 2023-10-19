@@ -9,6 +9,7 @@ public class ControladorUI : MonoBehaviour
     public Text etiquetaHeroe;
     public Image barraHPHeroe;
     public Text scoreTexto;
+    public Text vidasTexto;
 
     // Update is called once per frame
     void Update()
@@ -17,6 +18,7 @@ public class ControladorUI : MonoBehaviour
         float porcentajeHP = heroe.hp / (float)heroe.hpMax;
         barraHPHeroe.fillAmount = porcentajeHP;
         scoreTexto.text = "Score: " + heroe.score;
+        vidasTexto.text = "X " + heroe.vidas;
         
     }
 }
