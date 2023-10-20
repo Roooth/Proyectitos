@@ -11,6 +11,7 @@ public class ControladorJugador : MonoBehaviour
     public bool enPiso = false; //grounded
     public int saltoDoble = 0;//se puede saltar doble? o no
     public int maxSaltosPos = 2;//defino cuanto es el maximo de saltos posibles, 2 porque puede saltar desde el piso y uno en el aire
+    private ReproductoSonidos misSonidos;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class ControladorJugador : MonoBehaviour
         //Al atribuirle MiCuerpo le asigno el componente rigid body 2d a este personaje
         miCuerpo = GetComponent<Rigidbody2D>();
         miAnimador = GetComponent<Animator>();
+        misSonidos = GetComponent<ReproductoSonidos>();
     }
 
     // Update is called once per frame
@@ -70,6 +72,7 @@ public class ControladorJugador : MonoBehaviour
             }
 
             miAnimador.SetFloat("Vel_Vert", velActualVert);
+            misSonidos.reproducir("SALTAR");
             
         }
 

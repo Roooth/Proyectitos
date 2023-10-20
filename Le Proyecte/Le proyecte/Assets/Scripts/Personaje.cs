@@ -10,11 +10,14 @@ public class Personaje : MonoBehaviour
     public int hpMax = 100;
     public int score = 0;
     public int vidas = 3;
+    public GameObject efectoSangrePrefab;
     private Animator miAnimadori;
+    private ReproductoSonidos misSonido;
     //agregar etique para vidas, ya tenemos la cosa aqui ahora en el contolador de ui hacer lo mismo que el score
     void Start()
     {
         miAnimadori = GetComponent<Animator>();
+        misSonido = GetComponent<ReproductoSonidos>();
     }
 
     public void hacerDanio(int puntos, GameObject atacante)
@@ -22,6 +25,16 @@ public class Personaje : MonoBehaviour
         print(name + "recibe daño de " + puntos + "por " + atacante.name);
         hp = hp - puntos;
         miAnimadori.SetTrigger("Ouch");
+        misSonido.reproducir("DANIO");
+
+        //Creo instancia para prticula de sangre
+        GameObject sangre = Instantiate(efectoSangrePrefab, transform);
+    }
+    public void matar(int desvivir,GameObject atacante)
+    {
+        hp = 0;
+        vidas = vidas - 1;
+        misSonido.reproducir("MORIR");
     }
 
 

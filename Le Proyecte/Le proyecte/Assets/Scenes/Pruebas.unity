@@ -249,6 +249,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4415850044094595716, guid: 093a5569bde607d42bccd8d6f1f4a85b, type: 3}
+      propertyPath: efectoSangrePrefab
+      value: 
+      objectReference: {fileID: 4553287630450876385, guid: 15483e51212e3d74886ea57291f4639a, type: 3}
     - target: {fileID: 4415850044094595717, guid: 093a5569bde607d42bccd8d6f1f4a85b, type: 3}
       propertyPath: m_RootOrder
       value: 1
