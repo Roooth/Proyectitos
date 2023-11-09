@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemigoAgro : MonoBehaviour
 {
     private float distanciaAgro = 10;
+    private float distanciaAgroInterna = 2;
     private GameObject heroe;
     private Rigidbody2D miCuerpo;
     public float velocidadCaminar = 3;
@@ -41,6 +42,14 @@ public class EnemigoAgro : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 180, 0);
                 miCuerpo.velocity = new Vector3(-velocidadCaminar, 0, 0);
                 miAnimador.SetBool("Caminandu", true);
+            }
+            if (distancia < distanciaAgroInterna) 
+            {
+                miAnimador.SetBool("Ataque", true);
+            }
+            else
+            {
+                miAnimador.SetBool("Ataque", false);
             }
         }
         else

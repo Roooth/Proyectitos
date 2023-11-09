@@ -12,6 +12,8 @@ public class ControladorJugador : MonoBehaviour
     public int saltoDoble = 0;//se puede saltar doble? o no
     public int maxSaltosPos = 2;//defino cuanto es el maximo de saltos posibles, 2 porque puede saltar desde el piso y uno en el aire
     private ReproductoSonidos misSonidos;
+    public int puntosDanio;
+    private BoxCollider2D arma;
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +22,14 @@ public class ControladorJugador : MonoBehaviour
         miCuerpo = GetComponent<Rigidbody2D>();
         miAnimador = GetComponent<Animator>();
         misSonidos = GetComponent<ReproductoSonidos>();
+        arma = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         ComprobarPiso();
-        if (enPiso) 
+        if (enPiso)
         {
             miAnimador.SetBool("EnPiso", true);
         }
@@ -42,18 +45,18 @@ public class ControladorJugador : MonoBehaviour
         if (movHoriz > 0)// A la derecha
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
-                                            //El 3 es hardcore, asi es parametrizado :D
+            //El 3 es hardcore, asi es parametrizado :D
             miCuerpo.velocity = new Vector3(velocidadCaminar, velActualVert, 0);
-                miAnimador.SetBool("Caminando", true);             
-        
-            }
+            miAnimador.SetBool("Caminando", true);
+
+        }
         else if (movHoriz < 0)//A la izquierda
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
             miCuerpo.velocity = new Vector3(-velocidadCaminar, velActualVert, 0);
- 
-                miAnimador.SetBool("Caminando", true);
-                
+
+            miAnimador.SetBool("Caminando", true);
+
         }
         else//Quieto
         {
@@ -69,23 +72,42 @@ public class ControladorJugador : MonoBehaviour
             if (Input.GetButtonDown("Jump"))
             {
                 miCuerpo.AddForce(new Vector3(0, fuerzaSalto, 0), ForceMode2D.Impulse);
+                misSonidos.reproducir("SALTAR");
             }
 
-            miAnimador.SetFloat("Vel_Vert", velActualVert);
-            misSonidos.reproducir("SALTAR");
-            
+            if (Input.GetButtonDown("Fire1"))
+            {
+                //Atacar
+             void OnTriggerEnter2D(BoxCollider2D arma)
+                {
+                    GameObject otro = arma.gameObject;
+                    if (otro.tag == "Enemigo")
+                    {
+                        Personaje elPerso = otro.GetComponent<Personaje>();
+
+                        elPerso.hacerDanio(puntosDanio, this.gameObject);
+                    }
+                    miAnimador.SetTrigger("Atacar");
+                }
+
+                miAnimador.SetFloat("Vel_Vert", velActualVert);
+
+
+            }
+
+            else if (Input.GetButtonDown("Jump") && saltoDoble < maxSaltosPos - 1) //si se salta y ya se reseteo el salto doble..
+            {
+                miCuerpo.AddForce(new Vector2(0, fuerzaSalto), ForceMode2D.Impulse);//salta xd
+                saltoDoble++;//decir que ya se hizo el salto doble xd
+                misSonidos.reproducir("SALTAR");
+            }
         }
 
-        else if (Input.GetButtonDown("Jump") && saltoDoble < maxSaltosPos -1) //si se salta y ya se reseteo el salto doble..
+
+        void ComprobarPiso()
         {
-            miCuerpo.AddForce(new Vector2(0, fuerzaSalto), ForceMode2D.Impulse);//salta xd
-            saltoDoble++;//decir que ya se hizo el salto doble xd
+            //Lanzo un rayo de colision hacia abajo desde la posicion del este objeto
+            enPiso = Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
         }
-    }
-
-    void ComprobarPiso()
-    {
-        //Lanzo un rayo de colision hacia abajo desde la posicion del este objeto
-       enPiso = Physics2D.Raycast(transform.position,Vector2.down,0.1f);
     }
 }
