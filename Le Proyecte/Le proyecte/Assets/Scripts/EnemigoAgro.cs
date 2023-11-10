@@ -11,12 +11,14 @@ public class EnemigoAgro : MonoBehaviour
     public float velocidadCaminar = 3;
     private Animator miAnimador;
     public int puntosDanio = 10;
+    private Personaje miPersonaje;
 
     void Start()
     {
         heroe = GameObject.FindWithTag("Player");
         miCuerpo = GetComponent<Rigidbody2D>();
         miAnimador = GetComponent<Animator>();
+        miPersonaje = GetComponent<Personaje>();
     }
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class EnemigoAgro : MonoBehaviour
         Vector3 posYo = this.transform.position;
 
         float distancia = (posYo - posHeroe).magnitude;
-        if (distancia < distanciaAgro)
+        if (distancia < distanciaAgro && !miPersonaje.aturdido && !miPersonaje.estaMuerto)
         {
             //Esta dentro de la distancia agro
             if (posHeroe.x > posYo.x)
@@ -43,7 +45,7 @@ public class EnemigoAgro : MonoBehaviour
                 miCuerpo.velocity = new Vector3(-velocidadCaminar, 0, 0);
                 miAnimador.SetBool("Caminandu", true);
             }
-            if (distancia < distanciaAgroInterna) 
+            if (distancia < distanciaAgroInterna && !miPersonaje.aturdido && !miPersonaje.estaMuerto) 
             {
                 miAnimador.SetBool("Ataque", true);
             }
@@ -58,6 +60,11 @@ public class EnemigoAgro : MonoBehaviour
             miAnimador.SetBool("Caminandu", false);
 
         }
+        if (miPersonaje.estaMuerto)
+        { miAnimador.SetBool("semurio", true); }
+
+        if (miPersonaje.aturdido)
+        { miAnimador.SetTrigger("stun"); }
 
     }
     private void OnCollisionEnter2D(Collision2D collision)

@@ -10,12 +10,14 @@ public class EnemigoTieso : MonoBehaviour
     public float velocidadCaminar = 1;
     private Animator miAnimador;
     public int puntosDanio = 10;
+    private Personaje miPersonaje;
 
     void Start()
     {
         heroe = GameObject.FindWithTag("Player");
         miCuerpo = GetComponent<Rigidbody2D>();
         miAnimador = GetComponent<Animator>();
+        miPersonaje = GetComponent<Personaje>();
     }
 
     // Update is called once per frame
@@ -25,10 +27,10 @@ public class EnemigoTieso : MonoBehaviour
         Vector3 posYo = this.transform.position;
 
         float distancia = (posYo - posHeroe).magnitude;
-        if (distancia < distanciaAgro)
+        if (distancia < distanciaAgro && !miPersonaje.aturdido && !miPersonaje.estaMuerto)
         {
             //Esta dentro de la distancia agro
-            if (posHeroe.x > posYo.x)
+            if (posHeroe.x > posYo.x && !miPersonaje.aturdido && !miPersonaje.estaMuerto)
             {
                 //el heroe esta a la derecha del villano
                 transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -49,7 +51,11 @@ public class EnemigoTieso : MonoBehaviour
             miAnimador.SetBool("Caminandu", false);
 
         }
+        if (miPersonaje.estaMuerto)
+        { miAnimador.SetBool("semurio", true); }
 
+        if (miPersonaje.aturdido)
+        { miAnimador.SetTrigger("stun"); }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

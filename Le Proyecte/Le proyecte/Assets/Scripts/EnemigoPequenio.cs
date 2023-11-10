@@ -10,11 +10,13 @@ public class EnemigoPequenio : MonoBehaviour
     public float velocidadCaminar = 3;
     private Animator miAnimador;
     public int puntosDanio = 10;
+    private Personaje miPersonaje;
     void Start()
     {
         heroe = GameObject.FindWithTag("Player");
         miCuerpo = GetComponent<Rigidbody2D>();
         miAnimador = GetComponent<Animator>();
+        miPersonaje = GetComponent<Personaje>();
     }
 
     // Update is called once per frame
@@ -24,7 +26,7 @@ public class EnemigoPequenio : MonoBehaviour
         Vector3 posYo = this.transform.position;
 
         float distancia = (posYo - posHeroe).magnitude;
-        if (distancia < distanciaAgro)
+        if (distancia < distanciaAgro && !miPersonaje.aturdido && !miPersonaje.estaMuerto)
         {
             //Esta dentro de la distancia agro
             if (posHeroe.x > posYo.x)
@@ -48,6 +50,13 @@ public class EnemigoPequenio : MonoBehaviour
             miAnimador.SetBool("Caminandu", false);
 
         }
+        if (miPersonaje.estaMuerto)
+        { miAnimador.SetBool("semurio", true);
+            
+        }
+
+        if (miPersonaje.aturdido)
+        { miAnimador.SetTrigger("stun"); }
 
     }
     private void OnCollisionEnter2D(Collision2D collision)

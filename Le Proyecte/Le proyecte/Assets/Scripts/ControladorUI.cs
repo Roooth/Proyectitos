@@ -10,6 +10,11 @@ public class ControladorUI : MonoBehaviour
     public Image barraHPHeroe;
     public Text scoreTexto;
     public Text vidasTexto;
+    private Personaje miPersonaje;
+    private void Start()
+    {
+        miPersonaje = GetComponent<Personaje>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -19,6 +24,10 @@ public class ControladorUI : MonoBehaviour
         barraHPHeroe.fillAmount = porcentajeHP;
         scoreTexto.text = "Score: " + heroe.score;
         vidasTexto.text = "X " + heroe.vidas;
+
+        //si mi personaje se quedo sin hp
+
+        //si mi personaje se quedo sin vidas
         
     }
 }

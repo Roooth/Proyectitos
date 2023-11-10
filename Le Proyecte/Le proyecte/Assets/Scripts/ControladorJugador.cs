@@ -12,8 +12,9 @@ public class ControladorJugador : MonoBehaviour
     public int saltoDoble = 0;//se puede saltar doble? o no
     public int maxSaltosPos = 2;//defino cuanto es el maximo de saltos posibles, 2 porque puede saltar desde el piso y uno en el aire
     private ReproductoSonidos misSonidos;
-    public int puntosDanio = 5;
+    public int puntosDanio = 50;
     private BoxCollider2D arma;
+    private Personaje miPersonaje;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class ControladorJugador : MonoBehaviour
         miAnimador = GetComponent<Animator>();
         misSonidos = GetComponent<ReproductoSonidos>();
         arma = GetComponent<BoxCollider2D>();
+        miPersonaje = GetComponent<Personaje>();
     }
 
     // Update is called once per frame
@@ -42,7 +44,7 @@ public class ControladorJugador : MonoBehaviour
         float velActualVert = miCuerpo.velocity.y;
         //Leo si el usuario esta presionando un eje horizontal en las flechas
         float movHoriz = Input.GetAxis("Horizontal");
-        if (movHoriz > 0)// A la derecha
+        if (movHoriz > 0 && !miPersonaje.aturdido)// A la derecha
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
             //El 3 es hardcore, asi es parametrizado :D
@@ -50,7 +52,7 @@ public class ControladorJugador : MonoBehaviour
             miAnimador.SetBool("Caminando", true);
 
         }
-        else if (movHoriz < 0)//A la izquierda
+        else if (movHoriz < 0 && !miPersonaje.aturdido && !miPersonaje.estaMuerto)//A la izquierda
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
             miCuerpo.velocity = new Vector3(-velocidadCaminar, velActualVert, 0);
@@ -66,7 +68,7 @@ public class ControladorJugador : MonoBehaviour
 
 
         //Salto
-        if (enPiso)
+        if (enPiso && !miPersonaje.aturdido && !miPersonaje.estaMuerto) 
         {
             saltoDoble = 0; //se resetea el si podemos hacer salto doble para que no saltemos infinitamnete
             if (Input.GetButtonDown("Jump"))
@@ -75,17 +77,17 @@ public class ControladorJugador : MonoBehaviour
                 misSonidos.reproducir("SALTAR");
             }
 
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && !miPersonaje.aturdido && !miPersonaje.estaMuerto)
             {
                 //Atacar
 
-
+                miAnimador.SetTrigger("Ataque");
                 miAnimador.SetFloat("Vel_Vert", velActualVert);
 
 
             }
 
-            else if (Input.GetButtonDown("Jump") && saltoDoble < maxSaltosPos - 1) //si se salta y ya se reseteo el salto doble..
+            else if (Input.GetButtonDown("Jump") && saltoDoble < maxSaltosPos - 1 ) //si se salta y ya se reseteo el salto doble..
             {
                 miCuerpo.AddForce(new Vector2(0, fuerzaSalto), ForceMode2D.Impulse);//salta xd
                 saltoDoble++;//decir que ya se hizo el salto doble xd
@@ -102,7 +104,7 @@ public class ControladorJugador : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(BoxCollider2D arma)
+    private void OnTriggerEnter2D(Collider2D arma)
     {
         GameObject otro = arma.gameObject;
         if (otro.tag == "Enemigo")
@@ -112,6 +114,7 @@ public class ControladorJugador : MonoBehaviour
             elPerso.hacerDanio(puntosDanio, otro.gameObject);
             print(name + " hizo colision con " + arma.gameObject.name + "se murio el enemigo");
         }
-        miAnimador.SetTrigger("Atacar");
+        
     }
+    
 }
