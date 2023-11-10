@@ -12,7 +12,7 @@ public class ControladorJugador : MonoBehaviour
     public int saltoDoble = 0;//se puede saltar doble? o no
     public int maxSaltosPos = 2;//defino cuanto es el maximo de saltos posibles, 2 porque puede saltar desde el piso y uno en el aire
     private ReproductoSonidos misSonidos;
-    public int puntosDanio;
+    public int puntosDanio = 5;
     private BoxCollider2D arma;
 
     // Start is called before the first frame update
@@ -78,17 +78,7 @@ public class ControladorJugador : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 //Atacar
-             void OnTriggerEnter2D(BoxCollider2D arma)
-                {
-                    GameObject otro = arma.gameObject;
-                    if (otro.tag == "Enemigo")
-                    {
-                        Personaje elPerso = otro.GetComponent<Personaje>();
 
-                        elPerso.hacerDanio(puntosDanio, this.gameObject);
-                    }
-                    miAnimador.SetTrigger("Atacar");
-                }
 
                 miAnimador.SetFloat("Vel_Vert", velActualVert);
 
@@ -102,12 +92,26 @@ public class ControladorJugador : MonoBehaviour
                 misSonidos.reproducir("SALTAR");
             }
         }
-
+    
+       
 
         void ComprobarPiso()
         {
             //Lanzo un rayo de colision hacia abajo desde la posicion del este objeto
             enPiso = Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
         }
+    }
+
+    private void OnTriggerEnter2D(BoxCollider2D arma)
+    {
+        GameObject otro = arma.gameObject;
+        if (otro.tag == "Enemigo")
+        {
+            Personaje elPerso = otro.GetComponent<Personaje>();
+
+            elPerso.hacerDanio(puntosDanio, otro.gameObject);
+            print(name + " hizo colision con " + arma.gameObject.name + "se murio el enemigo");
+        }
+        miAnimador.SetTrigger("Atacar");
     }
 }
