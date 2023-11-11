@@ -5,3 +5,10 @@ C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\Pract
 C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\PracticaConstructores\obj\Debug\PracticaConstructores.csproj.CoreCompileInputs.cache
 C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\PracticaConstructores\obj\Debug\PracticaConstructores.exe
 C:\Users\ruth.baezm\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\PracticaConstructores\obj\Debug\PracticaConstructores.pdb
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\PracticaConstructores\bin\Debug\PracticaConstructores.exe.config
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\PracticaConstructores\bin\Debug\PracticaConstructores.exe
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\PracticaConstructores\bin\Debug\PracticaConstructores.pdb
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\PracticaConstructores\obj\Debug\PracticaConstructores.csproj.AssemblyReference.cache
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\PracticaConstructores\obj\Debug\PracticaConstructores.csproj.CoreCompileInputs.cache
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\PracticaConstructores\obj\Debug\PracticaConstructores.exe
+C:\Users\Ruth\Documents\GitHub\Proyectitos\Clases xd\Clasesiniciales\PracticaConstructores\obj\Debug\PracticaConstructores.pdb
