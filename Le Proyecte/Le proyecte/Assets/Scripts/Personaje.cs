@@ -12,6 +12,7 @@ public class Personaje : MonoBehaviour
     public int score = 0;
     public  int vidas = 3;
     public GameObject efectoSangrePrefab;
+    private GameObject heroe;
     private Animator miAnimadori;
     private ReproductoSonidos misSonido;
     public bool aturdido = false;
@@ -21,6 +22,7 @@ public class Personaje : MonoBehaviour
     {
         miAnimadori = GetComponent<Animator>();
         misSonido = GetComponent<ReproductoSonidos>();
+        heroe = GameObject.FindWithTag("Player");
     }
 
     public void hacerDanio(int puntos, GameObject atacante)
@@ -34,7 +36,12 @@ public class Personaje : MonoBehaviour
         if (hp <= 0)
         {
             estaMuerto = true;
-            miAnimadori.SetBool("semurio", true);
+            miAnimadori.SetBool("semurio", true);           
+            Invoke("matar", 2);
+            if (tag == "Player")
+            {
+                Invoke("Reiniciar", 10);
+            }
         }
         else
         {
@@ -42,7 +49,7 @@ public class Personaje : MonoBehaviour
             miAnimadori.SetBool("semurio", false);
         }
 
-
+        
 
 
         //Creo instancia para prticula de sangre
@@ -62,10 +69,10 @@ public class Personaje : MonoBehaviour
         miAnimadori.SetBool("semurio", true);
     }
 
-    private void Revivir ()
+    private void Reiniciar ()
     {
-        
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
     // Update is called once per frame
     void Update()
