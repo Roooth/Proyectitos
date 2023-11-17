@@ -11,6 +11,7 @@ public class Personaje : MonoBehaviour
     public int hpMax = 100;
     public int score = 0;
     public  int vidas = 3;
+    public int monedas = 0;
     public GameObject efectoSangrePrefab;
     private GameObject heroe;
     private Animator miAnimadori;
@@ -33,12 +34,12 @@ public class Personaje : MonoBehaviour
         misSonido.reproducir("DANIO");
         aturdido = true;
         Invoke("desaturdir", 1);
-        if (hp <= 0)
+        if (hp <= 0) //Si lo que recibe daño muere...
         {
             estaMuerto = true;
             miAnimadori.SetBool("semurio", true);           
             Invoke("matar", 2);
-            if (tag == "Player")
+            if (tag == "Player") //Si muere el jugador, reinicia el nivel
             {
                 Invoke("Reiniciar", 10);
             }
@@ -69,7 +70,7 @@ public class Personaje : MonoBehaviour
         miAnimadori.SetBool("semurio", true);
     }
 
-    private void Reiniciar ()
+    private void Reiniciar () //Meodo para reiniciar escena xd
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 

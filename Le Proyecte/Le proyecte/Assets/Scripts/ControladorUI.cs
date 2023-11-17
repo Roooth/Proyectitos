@@ -10,6 +10,7 @@ public class ControladorUI : MonoBehaviour
     public Image barraHPHeroe;
     public Text scoreTexto;
     public Text vidasTexto;
+    public Text moneda;
     private Personaje miPersonaje;
     private void Start()
     {
@@ -24,6 +25,9 @@ public class ControladorUI : MonoBehaviour
         barraHPHeroe.fillAmount = porcentajeHP;
         scoreTexto.text = "Score: " + heroe.score;
         vidasTexto.text = "X " + heroe.vidas;
+
+        //Monedas recojidas
+        moneda.text = "$ = " + heroe.monedas;
 
         //si mi personaje se quedo sin hp
 
