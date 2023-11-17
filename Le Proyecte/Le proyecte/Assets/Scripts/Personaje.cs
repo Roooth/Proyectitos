@@ -10,7 +10,7 @@ public class Personaje : MonoBehaviour
     public int hp = 90;
     public int hpMax = 100;
     public int score = 0;
-    public  int vidas = 3;
+    public int vidas = 3;
     public int monedas = 0;
     public GameObject efectoSangrePrefab;
     private GameObject heroe;
@@ -70,6 +70,18 @@ public class Personaje : MonoBehaviour
         miAnimadori.SetBool("semurio", true);
     }
 
+    public void Curar()
+    {
+        //curar 10 puntos de vida
+        hp = hp + 10;
+    }
+
+    public void Envenenar()
+    {
+        //cada segundo daña x cantidad al jugador
+        InvokeRepeating("hacerDanio", 3, 2);
+
+    }
     private void Reiniciar () //Meodo para reiniciar escena xd
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

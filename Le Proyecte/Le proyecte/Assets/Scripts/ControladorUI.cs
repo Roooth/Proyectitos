@@ -11,10 +11,11 @@ public class ControladorUI : MonoBehaviour
     public Text scoreTexto;
     public Text vidasTexto;
     public Text moneda;
-    private Personaje miPersonaje;
+    public Image gameover;
+    
     private void Start()
     {
-        miPersonaje = GetComponent<Personaje>();
+        
     }
 
     // Update is called once per frame
@@ -25,6 +26,11 @@ public class ControladorUI : MonoBehaviour
         barraHPHeroe.fillAmount = porcentajeHP;
         scoreTexto.text = "Score: " + heroe.score;
         vidasTexto.text = "X " + heroe.vidas;
+        if (heroe.vidas == 0)
+        {
+            bool vidasPerso = heroe.estaMuerto;
+            gameover.fillCenter = vidasPerso;
+        }
 
         //Monedas recojidas
         moneda.text = "$ = " + heroe.monedas;
