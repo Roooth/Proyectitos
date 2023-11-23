@@ -29,7 +29,7 @@ public class ControladorUI : MonoBehaviour
         if (Personaje.vidas == 0)
         {
             bool vidasPerso = heroe.estaMuerto;
-            gameover.fillCenter = vidasPerso;
+            gameover.fillAmount = 1;
         }
 
         //Monedas recojidas

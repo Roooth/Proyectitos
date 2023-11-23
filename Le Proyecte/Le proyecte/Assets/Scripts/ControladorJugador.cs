@@ -94,8 +94,8 @@ public class ControladorJugador : MonoBehaviour
                 misSonidos.reproducir("SALTAR");
             }
         }
-    
-       
+
+
 
         void ComprobarPiso()
         {
@@ -104,6 +104,12 @@ public class ControladorJugador : MonoBehaviour
         }
     }
 
+    public void Veloz()
+    {
+        //cada segundo daña x cantidad al jugador
+        velocidadCaminar = 8;
+
+    }
     private void OnTriggerEnter2D(Collider2D arma)
     {
         GameObject otro = arma.gameObject;

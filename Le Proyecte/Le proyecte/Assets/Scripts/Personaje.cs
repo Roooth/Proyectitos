@@ -82,6 +82,9 @@ public class Personaje : MonoBehaviour
         InvokeRepeating("hacerDanio", 3, 2);
 
     }
+
+
+
     private void Reiniciar () //Meodo para reiniciar escena xd
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -93,6 +96,14 @@ public class Personaje : MonoBehaviour
         if (hp <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (hp <= 0 && (Input.GetButtonDown("Fire1")))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            vidas = 3;
+            monedas = 0;
+            score = 0;
         }
     }
 }
