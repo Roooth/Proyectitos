@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class TesoroMoneda : MonoBehaviour
 {
-    private GameObject heroe;
+    public Personaje heroe;
+
     // Start is called before the first frame update
     void Start()
     {
-        heroe = GameObject.FindWithTag("Player");
+
     }
 
     // Update is called once per frame
@@ -21,7 +22,7 @@ public class TesoroMoneda : MonoBehaviour
     {
         if (otro.gameObject.CompareTag("Player")) //Si lo toca el jugador, destruir la moneda
         {
-           
+            Personaje.monedas++;
             Destroy(this.gameObject);
         }
     }

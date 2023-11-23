@@ -10,8 +10,8 @@ public class Personaje : MonoBehaviour
     public int hp = 90;
     public int hpMax = 100;
     public int score = 0;
-    public int vidas = 3;
-    public int monedas = 0;
+    public static int vidas = 3;
+    public static int monedas = 0;
     public GameObject efectoSangrePrefab;
     private GameObject heroe;
     private Animator miAnimadori;

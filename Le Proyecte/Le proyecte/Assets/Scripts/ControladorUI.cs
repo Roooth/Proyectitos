@@ -25,15 +25,15 @@ public class ControladorUI : MonoBehaviour
         float porcentajeHP = heroe.hp / (float)heroe.hpMax;
         barraHPHeroe.fillAmount = porcentajeHP;
         scoreTexto.text = "Score: " + heroe.score;
-        vidasTexto.text = "X " + heroe.vidas;
-        if (heroe.vidas == 0)
+        vidasTexto.text = "X " + Personaje.vidas;
+        if (Personaje.vidas == 0)
         {
             bool vidasPerso = heroe.estaMuerto;
             gameover.fillCenter = vidasPerso;
         }
 
         //Monedas recojidas
-        moneda.text = "$ = " + heroe.monedas;
+        moneda.text = "$ = " + Personaje.monedas;
 
         //si mi personaje se quedo sin hp
 
