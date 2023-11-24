@@ -21,7 +21,7 @@ public class Veneno : MonoBehaviour
         if (otro.gameObject.CompareTag("Player")) //Si lo toca el jugador, destruir la moneda
         {
             Personaje elPerso = otro.GetComponent<Personaje>();
-            elPerso.InvokeRepeating("hacerDanio", 3, 2);
+            elPerso.InvokeRepeating("Envenenar", 3, 2);
             Invoke("Destruir", 3);
         }
     }
