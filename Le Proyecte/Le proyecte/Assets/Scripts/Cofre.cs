@@ -49,7 +49,7 @@ public class Cofre : MonoBehaviour
 
     }
 
-    IEnumerator GetChestItem()
+    IEnumerator GetChestItem() //Hacer que spawnee el item
     {
         yield return new WaitForSeconds(delayCofre);
         Instantiate(ItemDrop, transform.position, Quaternion.identity);

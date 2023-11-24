@@ -29,4 +29,8 @@ public class Pocion : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
+    public void NoVeneno()
+    {
+        CancelInvoke("Envenenar");
+    }
 }

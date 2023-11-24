@@ -20,8 +20,8 @@ public class Velozpor3s : MonoBehaviour
         if (otro.gameObject.CompareTag("Player")) //Si lo toca el jugador, destruir la moneda
         {
             ControladorJugador elPerso = otro.GetComponent<ControladorJugador>();
-            elPerso.InvokeRepeating("Veloz", 3, 2);
-            Invoke("Destruir", 3);
+            elPerso.InvokeRepeating("Veloz", 3, 1);
+            Invoke("Destruir", 1);
         }
     }
     public void Destruir()

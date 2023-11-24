@@ -7,6 +7,17 @@ public class Personaje : MonoBehaviour
     
 {
     // Start is called before the first frame update
+    public enum tipoDanio
+    {
+        Agua,
+        Veneno,
+        Fuego,
+        Magia,
+        Fisico,
+
+    }
+
+    private Vector3 respawnPoint;
     public int hp = 90;
     public int hpMax = 100;
     public int score = 0;
@@ -24,11 +35,12 @@ public class Personaje : MonoBehaviour
         miAnimadori = GetComponent<Animator>();
         misSonido = GetComponent<ReproductoSonidos>();
         heroe = GameObject.FindWithTag("Player");
+        respawnPoint = transform.position;
     }
 
-    public void hacerDanio(int puntos, GameObject atacante)
+    public void hacerDanio(int puntos, GameObject atacante, tipoDanio tipo = tipoDanio.Fisico)
     {
-        print(name + "recibe daño de " + puntos + "por " + atacante.name);
+        print(name + "recibe daño de " + puntos + "por " + atacante.name + " de tipo" + tipo);
         hp = hp - puntos;
         miAnimadori.SetTrigger("Ouch");
         misSonido.reproducir("DANIO");
@@ -79,7 +91,7 @@ public class Personaje : MonoBehaviour
     public void Envenenar()
     {
         //cada segundo daña x cantidad al jugador
-        InvokeRepeating("hacerDanio", 3, 2);
+        hp = hp - 5;
 
     }
 
@@ -87,7 +99,9 @@ public class Personaje : MonoBehaviour
 
     private void Reiniciar () //Meodo para reiniciar escena xd
     {
+        transform.position = respawnPoint;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
 
     }
     // Update is called once per frame

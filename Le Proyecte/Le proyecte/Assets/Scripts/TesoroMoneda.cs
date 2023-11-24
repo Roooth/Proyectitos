@@ -23,7 +23,7 @@ public class TesoroMoneda : MonoBehaviour
         if (otro.gameObject.CompareTag("Player")) //Si lo toca el jugador, destruir la moneda
         {
             Personaje.monedas++;
-            dinero.AddForce(new Vector3(0, 2, 0), ForceMode2D.Impulse);
+            dinero.AddForce(new Vector3(0, 3, 0), ForceMode2D.Impulse);
             dinero.AddForce(new Vector3(0, -1, 0), ForceMode2D.Impulse);
             Invoke("Destruir", 1);
         }
