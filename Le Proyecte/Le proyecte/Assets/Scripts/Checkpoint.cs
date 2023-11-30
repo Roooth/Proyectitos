@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    private Vector3 respawnPoint;
+    private GameControler gc;
 
 
     void Start()
     {
-        
+        gc = GameObject.FindGameObjectWithTag("GC").GetComponent<GameControler>();
     }
 
     // Update is called once per frame
@@ -22,12 +22,7 @@ public class Checkpoint : MonoBehaviour
         if (otro.gameObject.CompareTag("Player")) //Si lo toca el jugador
         {
             print("Tocaron el checkpoint");
-            Personaje elPerso = otro.GetComponent<Personaje>();
-            if (elPerso.hp == 0)
-            {
-                
-            }
-            Invoke("Reiniciar", 3);
+            gc.lastCheckPointPos = transform.position;
         }
     }
 }

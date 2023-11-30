@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemigo
   - Checkpoint
+  - GC
   layers:
   - Default
   - TransparentFX

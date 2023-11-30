@@ -137,7 +137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49aa412537a41cb4ca459e41db83294d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroe: {fileID: 0}
+  heroe: {fileID: 4415850044094595716, guid: 093a5569bde607d42bccd8d6f1f4a85b, type: 3}
+  door: {fileID: 3336916878683598410, guid: f0b6cf369524ba349b0f4e473afac439, type: 3}
 --- !u!50 &7294290471337725821
 Rigidbody2D:
   serializedVersion: 4

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ControladorJugador : MonoBehaviour
 {
+    private GameControler gc;
     private Rigidbody2D miCuerpo;
     public float velocidadCaminar = 3;
     public float fuerzaSalto = 0; //Esta variable es la que parametriza y sale en el inspector de unity xd
@@ -25,6 +26,8 @@ public class ControladorJugador : MonoBehaviour
         misSonidos = GetComponent<ReproductoSonidos>();
         arma = GetComponent<BoxCollider2D>();
         miPersonaje = GetComponent<Personaje>();
+        gc = GameObject.FindGameObjectWithTag("GC").GetComponent<GameControler>();
+        transform.position = gc.lastCheckPointPos;
     }
 
     // Update is called once per frame

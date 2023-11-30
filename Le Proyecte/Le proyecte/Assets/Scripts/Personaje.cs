@@ -17,7 +17,8 @@ public class Personaje : MonoBehaviour
 
     }
 
-    private Vector3 respawnPoint;
+   
+
     public int hp = 90;
     public int hpMax = 100;
     public int score = 0;
@@ -29,13 +30,14 @@ public class Personaje : MonoBehaviour
     private ReproductoSonidos misSonido;
     public bool aturdido = false;
     public bool estaMuerto = false;
+    
     //agregar etique para vidas, ya tenemos la cosa aqui ahora en el contolador de ui hacer lo mismo que el score
     void Start()
     {
         miAnimadori = GetComponent<Animator>();
         misSonido = GetComponent<ReproductoSonidos>();
         heroe = GameObject.FindWithTag("Player");
-        respawnPoint = transform.position;
+        
     }
 
     public void hacerDanio(int puntos, GameObject atacante, tipoDanio tipo = tipoDanio.Fisico)
@@ -99,8 +101,9 @@ public class Personaje : MonoBehaviour
 
     private void Reiniciar () //Meodo para reiniciar escena xd
     {
-        transform.position = respawnPoint;
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
 
 
     }
@@ -109,7 +112,9 @@ public class Personaje : MonoBehaviour
     {
         if (hp <= 0)
         {
+            
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+           
         }
 
         if (hp <= 0 && (Input.GetButtonDown("Fire1")))

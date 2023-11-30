@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class GameControler : MonoBehaviour
 {
-    private GameObject heroe;
-    // Start is called before the first frame update
-    void Start()
-    {
-        heroe = GameObject.FindWithTag("Player");
-    }
+    private static GameControler instance;
+    public Vector2 lastCheckPointPos;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        if (heroe)
+        if(instance == null)
         {
-            //si se muere el jugador reinicia la escena
+            instance = this;
+            DontDestroyOnLoad(instance);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

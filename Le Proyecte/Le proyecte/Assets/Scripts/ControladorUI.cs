@@ -12,7 +12,8 @@ public class ControladorUI : MonoBehaviour
     public Text vidasTexto;
     public Text moneda;
     public Image gameover;
-    
+
+
     private void Start()
     {
         
@@ -35,9 +36,10 @@ public class ControladorUI : MonoBehaviour
         //Monedas recojidas
         moneda.text = "$ = " + Personaje.monedas;
 
+
         //si mi personaje se quedo sin hp
 
         //si mi personaje se quedo sin vidas
-        
+
     }
 }

@@ -6,6 +6,7 @@ public class TesoroMoneda : MonoBehaviour
 {
     public Personaje heroe;
     private Rigidbody2D dinero;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class TesoroMoneda : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
 
     }
     private void OnTriggerEnter2D(Collider2D otro)
